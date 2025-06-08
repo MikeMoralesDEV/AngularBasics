@@ -1,59 +1,69 @@
-# AngularBasics
+# Angular Basics - Conceptos Básicos de Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Repositorio con ejemplos para aprender los fundamentos de Angular.
 
-## Development server
+## Estructura del Proyecto
 
-To start a local development server, run:
+- **/src/app/components** - Componentes principales
+- **/src/app/directives** - Directivas personalizadas
+- **/src/app/pipes** - Pipes personalizados
+- **/src/app/services** - Servicios y lógica de negocio
+- **/src/app/app.module.ts** - Módulo principal
+- **/src/app/app-routing.module.ts** - Configuración de rutas
 
-```bash
-ng serve
-```
+## Configuración de Rutas (Routing)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Angular utiliza un sistema de routing para mostrar componentes dinámicamente:
 
-## Code scaffolding
+1. **Routes**: Se definen en el módulo de routing:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+`const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];`
 
-```bash
-ng generate component component-name
-```
+2. **RouterLink**: En las plantillas HTML se usa para navegar:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+`<a routerLink="/home">Inicio</a>`
+`<a routerLink="/about">Acerca de</a>`
 
-```bash
-ng generate --help
-```
+3. **RouterOutlet**: Donde se renderizan los componentes:
 
-## Building
+`<router-outlet></router-outlet>`
 
-To build the project run:
+## Componentes Standalone (Independientes)
 
-```bash
-ng build
-```
+Los componentes standalone son una característica moderna de Angular que:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. **No requieren NgModule**: Se declaran como independientes
+2. **Ventajas**:
+   - Menos código boilerplate
+   - Mejor organización
+   - Más fáciles de reutilizar
+3. **Cómo usarlos**:
+   - Se marcan con `standalone: true`
+   - Importan sus propias dependencias
 
-## Running unit tests
+`@Component({
+  standalone: true,
+  imports: [CommonModule],
+  template: '...'
+})`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Configuración Básica
 
-```bash
-ng test
-```
+1. Clonar repositorio:
+`git clone https://github.com/MikeMoralesDEV/AngularBasics.git`
 
-## Running end-to-end tests
+2. Instalar dependencias:
+`npm install`
 
-For end-to-end (e2e) testing, run:
+3. Ejecutar aplicación:
+`ng serve`
 
-```bash
-ng e2e
-```
+## Recursos Adicionales
+[Documentación Angular](https://angular.io/docs)  
+[Guía de Routing](https://angular.io/guide/router)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Licencia
+MIT License
