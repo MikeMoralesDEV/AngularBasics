@@ -5,10 +5,10 @@ import { ProductosComponent } from './productos/productos.component';
 import { EjemploComponent } from './ejemplo/ejemplo.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'Productos', pathMatch: 'full' },
   { path: 'Menu', component: MenuComponent },
   { path: 'Noticias', component: NoticiasComponent },
   { path: 'Productos', component: ProductosComponent },
   { path: 'Ejemplo', component: EjemploComponent },
 
 ];
+
